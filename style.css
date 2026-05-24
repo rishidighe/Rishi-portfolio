@@ -1,0 +1,227 @@
+/* =========================================
+   EYES BLEEDED - BRUTALIST CHAOS THEME
+   ========================================= */
+
+@keyframes seizure {
+    0% { background-color: #ff00ff; color: #00ff00; }
+    25% { background-color: #00ffff; color: #ff0000; }
+    50% { background-color: #ffff00; color: #0000ff; }
+    75% { background-color: #00ff00; color: #ff00ff; }
+    100% { background-color: #ff00ff; color: #00ff00; }
+}
+
+@keyframes spin-chaos {
+    from { transform: rotate(0deg) scale(1); }
+    to { transform: rotate(360deg) scale(1.5); }
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+:root {
+    --primary: #FF00FF; /* Magenta */
+    --secondary: #00FFFF; /* Cyan */
+    --tertiary: #FFFF00; /* Yellow */
+    --border: 10px solid black;
+    --font-chaotic: "Comic Sans MS", "Chalkboard SE", sans-serif;
+    --font-loud: "Impact", "Arial Black", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: crosshair !important;
+}
+
+body {
+    background-color: var(--tertiary);
+    color: black;
+    font-family: var(--font-chaotic);
+    overflow-x: hidden;
+    /* Clashing background pattern */
+    background-image: repeating-linear-gradient(45deg, var(--tertiary) 25%, transparent 25%, transparent 75%, var(--tertiary) 75%, var(--tertiary)), repeating-linear-gradient(45deg, var(--tertiary) 25%, var(--secondary) 25%, var(--secondary) 75%, var(--tertiary) 75%, var(--tertiary));
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
+}
+
+/* Aggressive selection */
+::selection {
+    background-color: var(--primary);
+    color: var(--tertiary);
+}
+
+marquee {
+    font-family: var(--font-loud);
+    font-size: 3rem;
+    background: var(--primary);
+    color: var(--tertiary);
+    border-top: var(--border);
+    border-bottom: var(--border);
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.blink {
+    animation: seizure 0.2s infinite;
+    padding: 2px 10px;
+    display: inline-block;
+    border: 3px dashed black;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-loud);
+    text-transform: uppercase;
+    text-shadow: 5px 5px 0px var(--secondary), -5px -5px 0px var(--primary);
+    letter-spacing: -2px;
+}
+
+a {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+    background: yellow;
+    border: 2px solid blue;
+    padding: 2px 5px;
+}
+
+a:hover {
+    animation: shake 0.5s infinite;
+    color: red;
+    background: cyan;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    border: var(--border);
+    background: white;
+    box-shadow: 20px 20px 0px var(--primary);
+}
+
+.section {
+    margin-bottom: 80px;
+    padding: 30px;
+    border: 8px dashed black;
+    background: var(--secondary);
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    background: var(--tertiary);
+    padding: 50px;
+    border: var(--border);
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 8rem;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    color: white;
+    transform: rotate(-2deg);
+}
+
+.hero p {
+    font-size: 2rem;
+    font-weight: bold;
+    background: var(--primary);
+    color: white;
+    padding: 20px;
+    border: 5px solid black;
+    transform: rotate(1deg);
+}
+
+.profile-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 0;
+    border: 15px double red;
+    margin: 30px auto;
+    display: block;
+    filter: contrast(200%) saturate(300%) hue-rotate(90deg);
+}
+
+.profile-img:hover {
+    animation: spin-chaos 0.5s infinite;
+}
+
+/* BRUTALIST BUTTONS */
+.btn {
+    display: inline-block;
+    padding: 20px 40px;
+    font-size: 2rem;
+    font-family: var(--font-loud);
+    background: black;
+    color: var(--tertiary);
+    border: 5px solid var(--primary);
+    box-shadow: 10px 10px 0px var(--secondary);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.1s;
+}
+
+.btn:active {
+    transform: translate(10px, 10px);
+    box-shadow: none;
+}
+
+/* GRIDS */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: var(--primary);
+    border: 8px solid black;
+    padding: 20px;
+    box-shadow: -15px 15px 0px var(--secondary);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05) rotate(3deg);
+    background: var(--tertiary);
+}
+
+.card h3 {
+    font-size: 2.5rem;
+    color: black;
+    text-shadow: 2px 2px 0px white;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background: black;
+    padding: 10px;
+}
+
+.card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.card li {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    list-style-type: square;
+}
