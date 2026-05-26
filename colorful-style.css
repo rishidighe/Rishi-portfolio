@@ -1,0 +1,373 @@
+/* BRUTALIST STYLE - SARCASTIC PORTFOLIO */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --yellow: #facc15;
+    --pink: #f472b6;
+    --blue: #3b82f6;
+    --green: #4ade80;
+    --border-width: 4px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.5;
+    overflow-x: hidden;
+    cursor: crosshair; /* Adds to the quirky vibe */
+}
+
+h1, h2, h3, .logo, .brutal-btn, .marquee-content {
+    font-family: 'Syne', sans-serif;
+}
+
+/* Utilities */
+.bg-yellow { background-color: var(--yellow); }
+.bg-black { background-color: var(--black); color: var(--white); }
+.bg-pink { background-color: var(--pink); }
+.bg-blue { background-color: var(--blue); }
+.bg-green { background-color: var(--green); }
+.bg-white { background-color: var(--white); }
+
+.text-white { color: var(--white); }
+
+.grid-1 { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+
+@media (max-width: 768px) {
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    border-bottom: var(--border-width) solid var(--black);
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.nav-links a {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--black);
+    text-decoration: none;
+    margin-left: 2rem;
+    border: 2px solid transparent;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: var(--yellow);
+    border-color: var(--black);
+    box-shadow: 4px 4px 0px var(--black);
+}
+
+/* Hero Section */
+.hero {
+    border-bottom: var(--border-width) solid var(--black);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+}
+
+.hero-text {
+    padding: 5rem 3rem;
+    border-right: var(--border-width) solid var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .hero-text { border-right: none; border-bottom: var(--border-width) solid var(--black); }
+}
+
+.hero-text h1 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    font-weight: 700;
+}
+
+.hero-image {
+    padding: 3rem;
+    background-color: var(--yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border: var(--border-width) solid var(--black);
+    box-shadow: 15px 15px 0px var(--black);
+    margin-bottom: 2rem;
+    transition: transform 0.2s;
+}
+
+.hero-image img:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 20px 20px 0px var(--black);
+}
+
+.image-caption {
+    font-weight: 700;
+    background: var(--white);
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--black);
+    transform: rotate(-2deg);
+}
+
+/* Brutalist Button */
+.brutal-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--black);
+    background-color: var(--white);
+    border: var(--border-width) solid var(--black);
+    box-shadow: 8px 8px 0px var(--black);
+    transition: all 0.1s;
+    width: max-content;
+}
+
+.brutal-btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 4px 4px 0px var(--black);
+}
+
+.brutal-btn.large {
+    font-size: 2rem;
+    padding: 1.5rem 3rem;
+}
+
+/* Marquee */
+.marquee {
+    border-top: var(--border-width) solid var(--black);
+    background-color: var(--black);
+    color: var(--yellow);
+    padding: 1rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.marquee-content {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 900;
+    animation: marqueeScroll 15s linear infinite;
+}
+
+.marquee-content span {
+    margin: 0 2rem;
+}
+
+@keyframes marqueeScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Brutalist Sections */
+.brutal-section {
+    border-bottom: var(--border-width) solid var(--black);
+    padding: 6rem 3rem;
+}
+
+.section-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.brutal-section h2 {
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: -2px;
+}
+
+.sarcastic-sub {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4rem;
+    opacity: 0.9;
+}
+
+.placeholder-box {
+    background-color: transparent;
+    border: var(--border-width) solid var(--black);
+    padding: 3rem;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.5rem;
+    box-shadow: 10px 10px 0px var(--black);
+    transition: transform 0.2s;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.placeholder-box:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--black);
+}
+
+.smm-list {
+    list-style-position: inside;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.graphics-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    border: var(--border-width) solid var(--black);
+    box-shadow: 10px 10px 0px var(--black);
+    transition: transform 0.2s;
+    background-color: var(--white);
+    object-fit: cover;
+}
+
+.gallery-img:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--black);
+}
+
+.outline-white {
+    border-color: var(--white);
+    background-color: var(--black);
+    color: var(--white);
+    box-shadow: 10px 10px 0px var(--white);
+}
+
+.outline-white:hover {
+    box-shadow: 15px 15px 0px var(--white);
+}
+
+/* Stat Grid */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .stat-grid { grid-template-columns: 1fr; }
+}
+
+.stat-card {
+    border: var(--border-width) solid var(--white);
+    padding: 3rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.stat-card p {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--yellow);
+}
+
+/* Footer */
+.brutal-footer {
+    padding: 8rem 3rem;
+    text-align: center;
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brutal-footer h2 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+.brutal-footer p {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+}
+
+.footer-links {
+    margin-top: 4rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--yellow);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 5px;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+}
