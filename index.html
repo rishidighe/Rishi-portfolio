@@ -31,16 +31,18 @@
     </nav>
 
     <!-- Brutalist Hero -->
-    <header class="hero" style="background-image: url('./assets/images/rishi-profile.jpg'); background-size: cover; background-position: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; padding: 0;">
-        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.3); z-index: 1;"></div>
+    <header class="hero" style="background-image: url('./assets/images/rishi-profile.jpg'); background-size: cover; background-position: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start; position: relative; padding: 0;">
+        <!-- Soft gradient at bottom to ensure text readability -->
+        <div style="position: absolute; bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); z-index: 1;"></div>
         
-        <div style="z-index: 2; text-align: center; max-width: 900px; padding: 40px; background: black; border: 15px solid var(--yellow); box-shadow: 20px 20px 0px var(--pink); transform: rotate(-2deg); margin: 20px;">
-            <h1 style="color: white; text-shadow: 5px 5px 0px var(--primary); font-size: clamp(3rem, 8vw, 7rem); margin-bottom: 20px; line-height: 1;">WEARING LEATHER.<br>SCALING BRANDS.</h1>
-            <p style="font-size: 1.5rem; color: white; margin-bottom: 30px; line-height: 1.4;">Hi, I'm Rishi. I wear black leather, stand next to bright yellow flowers, and spend other people's ad budgets to make them rich. I look at analytics dashboards until my eyes bleed so you don't have to.</p>
-            <a href="#work" class="brutal-btn" style="background: white; color: black; border: 5px solid var(--primary); font-size: 1.5rem; padding: 15px 40px; box-shadow: 8px 8px 0px var(--primary);">SEE MY STUFF</a>
+        <div style="z-index: 2; text-align: left; max-width: 800px; padding: 40px; margin-bottom: 80px; margin-left: 20px;">
+            <p style="font-size: 1rem; color: var(--yellow); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px;">Anti-Marketer • E-Commerce Growth</p>
+            <h1 style="color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-size: clamp(3rem, 6vw, 5rem); margin-bottom: 15px; line-height: 1.1; font-family: 'Outfit', sans-serif !important; font-weight: 900;">WEARING LEATHER.<br>SCALING BRANDS.</h1>
+            <p style="font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 25px; line-height: 1.5; max-width: 600px;">I wear black leather, stand next to bright yellow flowers, and spend other people's ad budgets to make them rich. I look at analytics dashboards until my eyes bleed so you don't have to.</p>
+            <a href="#work" class="brutal-btn" style="background: white; color: black; border: none; font-size: 1.2rem; padding: 15px 35px; border-radius: 0;">SEE MY STUFF</a>
         </div>
         
-        <div class="marquee" style="position: absolute; bottom: 0; width: 100%; z-index: 2; border-top: 10px solid var(--primary);">
+        <div class="marquee" style="position: absolute; bottom: 0; width: 100%; z-index: 2; border-top: 2px solid rgba(255,255,255,0.2);">
             <div class="marquee-content">
                 <span>DIGITAL MARKETING</span> • <span>MEME MANAGEMENT</span> • <span>ROI ENTHUSIAST</span> • <span>SPREADSHEET SURVIVOR</span> • 
                 <span>DIGITAL MARKETING</span> • <span>MEME MANAGEMENT</span> • <span>ROI ENTHUSIAST</span> • <span>SPREADSHEET SURVIVOR</span> •
