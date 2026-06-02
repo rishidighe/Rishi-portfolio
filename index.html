@@ -353,5 +353,67 @@
     </footer>
 
     <script src="main.js"></script>
+
+    <!-- Magic Inverted Cursor -->
+    <div id="magic-cursor"></div>
+    <style>
+    /* Hide the default cursor for non-touch devices */
+    @media (pointer: fine) {
+        body, a, button, .brutal-btn, .marquee {
+            cursor: none !important;
+        }
+    }
+
+    #magic-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background: white;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 99999;
+        mix-blend-mode: difference;
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease-out, height 0.2s ease-out, border 0.2s ease-out;
+        display: none;
+    }
+
+    @media (pointer: fine) {
+        #magic-cursor {
+            display: block;
+        }
+    }
+
+    .magic-hover {
+        width: 100px !important;
+        height: 100px !important;
+        background: transparent !important;
+        border: 4px solid white;
+    }
+    </style>
+    <script>
+        const cursor = document.getElementById('magic-cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            requestAnimationFrame(() => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+        });
+
+        // Add hover effect to interactive elements and large text
+        const hoverElements = document.querySelectorAll('a, button, .brutal-btn, h1, h2, h3, img, span');
+        
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('magic-hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('magic-hover');
+            });
+        });
+    </script>
 </body>
 </html>
